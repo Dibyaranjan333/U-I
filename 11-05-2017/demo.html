@@ -1,0 +1,13 @@
+<div type="text/ng-template" id="modal.html">
+      <div class="modal-header">
+        <h3 class="modal-title">Enter Project Name</h3>
+      </div>
+	  <div class="modal-body">
+	  <input class="form-control input-lg" type="text" input ng-model="name">
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-default" ng-click="modal.cancel()">Cancel</button>
+      
+        <button class="btn btn-default" ng-click="modal.save(name)">Save</button>
+      </div>
+    </div>

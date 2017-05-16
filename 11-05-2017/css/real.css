@@ -1,0 +1,24 @@
+#main{ margin-left: 33%;
+    width: 25%;
+    height: 47%;
+    background-color: aliceblue;
+}
+tr td {
+    line-height: 30px;
+    font-size: 17px;
+	    width: 1%;
+}
+tr td span {
+	float: right;
+	margin-right: 6%;
+    padding-left: 19%;
+}
+body{
+margin-top:30px;
+
+}
+.caret{
+margin-left: 12px;
+
+
+}
