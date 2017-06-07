@@ -1,0 +1,36 @@
+<!Doctype html> 
+<html> 
+<head>
+ <title>Iframe Example </title>
+ 
+ <script src="https://code.jquery.com/jquery-1.10.2.js"></script> 
+ </head>
+ <body> 
+ <iframe id="iframe" src="login.html" width="500px" height="500px" scrolling="yes";>
+ </iframe> 
+ <script>
+ $(document).ready(function text() {
+ var c=$('#iframe').contents().find("body").text().length;
+ if ( c >0)
+ {
+		   $('#iframe').contents().find(".form-group").css({"display": "inline-block","margin-bottom": "5px","margin-top": "5px","margin-left":"12px"});	
+		   $('#iframe').contents().find("input").css({"width": "82%","margin-top": "10px" });
+		   $('#iframe').contents().find(".form-control,#first_name").css({"width": "90%" });
+		   $('#iframe').contents().find("#country_c").css({"width": "117%" });
+		   $('#iframe').contents().find("label").css({"display": "block","color":"black" });
+		   $('#iframe').contents().find("body").css({"margin-left": "55px", });
+		   $('#iframe').contents().find(".button").css({"margin-left":"10px","width": "85%" });
+		   $('#iframe').css({"background-color":"#3789ca","margin":"auto","display":"block","box-shadow":"15px 15px 10px #888","border":"none"});
+		   console.log(c);
+       }
+	   else {
+   setTimeout(
+  function() 
+  {
+    text();
+  }, 100);
+}
+ });
+ </script> 
+ </body> 
+ </html>

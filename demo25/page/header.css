@@ -1,0 +1,184 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #ccc;
+}
+.nav{
+position:relative;
+width:100%;
+height:55px;
+}
+.test{
+height:55px;
+position:absolute;
+}
+.test i {
+margin-top:18px;
+margin-left:15px;
+}
+.subnav{
+width:70px;
+color:#b2b6be;
+background-color: #495469;
+}
+.circle{
+margin-left:77%;
+width:42px;
+}
+.bell{
+margin-left:80%;
+width:42px;
+}
+#avatar{
+margin-left:85%;
+    padding-top: 14px;
+}
+.dash{
+position:absolute;
+margin-left:80px;
+height:55px;
+margin-top: 16px;
+width:92px;
+}
+.last{
+	position:absolute;
+	margin-left: 97%;
+	margin-top: -32px;
+	color:#4d525d;
+}
+.nav ul {
+  list-style: none;
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+	height:55px;
+}
+.nav a {
+  text-decoration: none;
+  color: #7a7a7a;
+  display: block;
+}
+  #avatar  img{
+    width: 32px;
+    height: 32px;
+	padding-top: 3px;
+    border-radius: 50%;
+	margin-top: -7px;
+}
+.pull-left {
+    padding-right: 8px;
+	margin-top: 3px;
+	color:#4d525d;
+}
+.sidenav{
+	position:relative;
+       width: 70px;
+    height: 100%;
+}
+.sidenav ul { 
+
+margin-top: 0px;
+list-style:none;
+height:1025px;
+background-color:#495469;
+}
+.sidenav ul li {
+	margin-left: -41px;
+    height: 43px;
+}
+.sidenav ul li:hover {
+    background-color:#3e4758;
+}
+.sidenav ul li a{
+    color: #b2b6be;
+	text-align: center;
+    padding-top: 17px;
+	padding-left: 24px;
+	width: 16px;
+    height: 16px;
+}
+.sidenav ul li:hover a,li{
+color:#fff;
+cursor:pointer;
+}
+.subclass ul li a{
+display:inline;
+}
+.movec{
+		position: absolute;
+        margin-left: 29.9px;
+}
+.movec ul li  {
+	display:block;
+    background-color: #495469;
+	height: 33px;
+    text-align: center;
+}
+.movec ul {
+list-style:none;
+}
+.movec ul li a{
+color:#b2b6be;
+height:15px;
+}
+.movec ul li:hover a{
+color:white;
+}
+.movec ul li:hover {
+background-color:#3e4758;
+}
+.tog{
+     top: 82px;
+}
+.tog ul li {
+width: 140px;
+}
+.drop{
+ top: 125px;
+}
+.drop ul{
+width: 140px;
+height:353px;
+}
+.tab{
+ top: 168px;
+}
+.tab ul li {
+width:143px;
+}
+.flow{
+ top: 211px;
+}
+.flow ul li {
+width:104px;
+}
+.map{
+ top: 254px;
+}
+.map ul li {
+width:100px;
+}
+.send{
+top:297px;
+}
+.send ul li {
+width:100px;
+}
+.trop{
+top:340px;
+}
+.trop ul li {
+width:140px;
+}
+.env{
+top:469px;
+}
+.env ul li {
+width:97px;
+}
+.slider{
+width:250px;
+}
+#nana{
+width:70px;
+}

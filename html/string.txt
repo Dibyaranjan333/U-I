@@ -1,0 +1,30 @@
+
+down vote
+accepted
+JavaScript has two main type categories, primivites and objects.
+
+var s = 'test';
+var ss = new String('test');
+The single quote/double quote patterns are identical in terms of functionality. That aside, the behaviour you are trying to name is called auto-boxing. So what actually happens is that a primitive is converted to its wrapper type when a method of the wrapper type is invoked. Put simple:
+
+var s = 'test';
+Is a primitive data type. It has no methods, it is nothing more than a pointer to a raw data memory reference, which explains the much faster random access speed.
+
+So what happens when you do s.charAt(i) for instance?
+
+Since s is not an instance of String, JavaScript will auto-box s, which has typeof string to its wrapper type, String, with typeof object or more precisely s.valueOf(s).prototype.toString.call = [object String].
+
+The auto-boxing behaviour casts s back and forth to its wrapper type as needed, but the standard operations are incredibly fast since you are dealing with a simpler data type. However auto-boxing and Object.prototype.valueOf have different effects.
+
+If you want to force the auto-boxing or to cast a primitive to its wrapper type, you can use Object.prototype.valueOf, but the behaviour is different. Based on a wide variety of test scenarios auto-boxing only applies the 'required' methods, without altering the primitive nature of the variable. Which is why you get better speed.
+
+------------------------------------
+
+
+JavaScript string must be enclosed in double or single quotes (" " or ' ').
+String can be assigned to a variable using = operator.
+Multiple strings can be concatenated using + operator.
+A string can be treated as character array.
+Use back slash (\) to include quotation marks inside string.
+String objects can be created using new keyword. e.g. var str = new String();
+String methods are used to perform different task on strings.

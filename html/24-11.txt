@@ -1,0 +1,8 @@
+.test vs .search
+.Debugging is the process of testing, finding, and reducing bugs (errors) in computer programs.
+The first known computer bug was a real bug (an insect) stuck in the electronics.
+   
+
+Hoisting
+----------
+default behavior of moving all declarations to the top of the current scope (to the top of the current script or the current function).

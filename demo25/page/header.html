@@ -1,0 +1,31 @@
+ <div class="nav">
+      <ul>
+        <li class="test subnav" ng-click="slide()"><i class="fa fa-align-left" ></i></li>
+        <li class="dash"style="color: #3e4758;">Dashboard</li>
+		<li class="test circle"> <a> <i class="fa fa-circle-thin"></i> </a></li>
+			<li class="test bell"><a><i class="fa fa-bell-o"></i></a></li>
+			<li id="avatar"> 
+					<img src="avatr.jpg"> 
+					<span class="pull-left"> Samuel Perkins </span> 
+			</li>
+        <li class="last"><i class="fa fa-align-left" ></i></li>
+      </ul>
+    </div>
+	<div class="sidenav">
+		<ul>
+			 <li ng-repeat="x in data" id="{{x.idli}}" ng-mouseover="hoverIn();show($index)" ng-mouseleave="hoverOut()" ng-click="dropfunc($index)">
+				<a class="{{x.id}}" ></a>
+				<a ng-hide="nval">{{x.val}} </a>
+					<ul>
+						<li ng-repeat="z in emp" ng-if="z.id2==x.sub[$index].id2" style="display: block;">{{z.id2}}</li>
+					</ul>
+			</li>
+		</ul>
+	</div>
+	<!-- <div class="movec {{clas}}" ng-show="hoverEdit && nval" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()" >
+		<ul>
+			<li ng-repeat="y in tmp"><a>{{y.id2}}</a></li>
+		</ul>
+	</div> -->
+<div>
+</div>	

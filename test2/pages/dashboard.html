@@ -1,0 +1,45 @@
+<div class="container-fluid" ng-init="myFunction2()" ng-controller="myCtrl">
+<div id="loader"></div>
+<div class="row content" id="myDiv">
+<div class="col-sm-3 sidenav">
+  <div id='cssmenu'>
+	<ul>
+	
+		<li  class='active has-sub' ng-repeat="x1 in myWelcome.items"><a ng-click="mainMenu($index)"><span>{{x1.id}}</span></a>
+		  <ul ng-show="subAllMenu[$index]">
+			 
+			   <li ng-repeat="x in x1.submenu"><a id="panel"><span ng-click="showme(x)">{{x.sub}}</span></a></li> 		
+			
+		  </ul>
+	   </li>
+	</ul>
+  </div>
+</div>
+
+
+<div class="col-sm-9 sidenav" ng-hide="value">
+<div > 
+<table style="width:100%">
+<th> name </th>
+<th> phone</th>
+<th>email</th>
+<th>salary</th>
+  <tr ng-repeat="x2 in val">
+    <td>{{x2.ename }}</td>
+    <td>{{x2.phone }}</td>
+	<td>{{x2.email}}</td>
+	<td>{{x2.sal}}</td>
+  </tr>
+</table>
+
+</div>
+</div>
+	
+	
+	
+	 
+</div>
+
+</div>
+
+

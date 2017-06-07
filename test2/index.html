@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- define angular app -->
+<html ng-app="scotchApp">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/testt.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+  <!-- SPELLS -->
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+  <script src="rout.js"></script> 
+   <script src="cont.js"></script> 
+  <script src="fact.js"></script>
+  <script src="script.js"></script> 
+   <!--<script src="hhss.js"></script>-->
+   
+	
+	 
+
+ 
+</head>
+<!-- define angular controller -->
+
+<body >
+<div ng-include src="'pages/header.html'"></div>
+  
+  <div id="main">	
+    <div ng-view></div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+
+<div class="login">
+  <h1>Login</h1
+<div>
+<form name="myForm">
+   <label STYLE="color:white; font-size: 10pt" for="email">Email</label>
+   <input type="email" id="email" name="email" ng-model="formData.email" required/>
+   <span STYLE="color: green; font-size: 10pt" ng-show="myForm.email.$error.required && myForm.email.$dirty">required</span>
+   <span STYLE="color: green; font-size: 10pt" ng-show="!myForm.email.$error.required && myForm.email.$error.email && myForm.email.$dirty">invalid email</span>
+			
+		 <label STYLE="color:white; font-size: 10pt" for="password">Password</label>
+       <input type="password" id="password" name="password" ng-model="formData.password" ng-minlength="8" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required  />
+   <span STYLE="color: green; font-size: 10pt" ng-show="myForm.password.$error.required && myForm.password.$dirty">required</span>
+   <span STYLE="color: green; font-size: 10pt" ng-show="!myForm.password.$error.required && (myForm.password.$error.minlength || myForm.password.$error.maxlength) && myForm.password.$dirty">Passwords must be between 8 and 20 characters.</span>
+   <span STYLE="color: green; font-size: 10pt" ng-show="!myForm.password.$error.required && !myForm.password.$error.minlength && !myForm.password.$error.maxlength && myForm.password.$error.pattern && myForm.password.$dirty">Must contain one lower &amp; uppercase letter, and one non-alpha character (a number or a symbol.)</span>
+       <br />
+	<a href="#dashboard">   
+	<button ng-click="showme=true" type="submit" class="btn"  ng-disabled="!myForm.$valid">Submit</button>
+	
+   </a>
+	</form>
+</div>
+</div>
+
+	
+	
+
+

@@ -1,0 +1,43 @@
+<!Doctype html> 
+<html> 
+<head>
+ <title>popup window </title>
+ 
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <script src="http://angular-ui.github.com/bootstrap/ui-bootstrap-tpls-0.2.0.js"></script>
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.js"></script>
+ <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ </head>
+		 <body> 
+				<div id="main" ng-app="myApp" ng-controller="myCtrl">
+							<div ng-click="removeClass()">
+							<button class="btn btn-primary" ng-click="myFunc()" type="button" >{{head}} <i class="fa fa-caret-down" id="rclass" style="font-size:20px"></i></button>
+							
+							</div>
+						<div ng-show="show">	
+							<div id="scr" > 
+								
+								<table class="table-bordered">
+								  <tr ng-repeat="x in items track by $index">
+									<td ng-if="$index">
+										<a ng-click="change($index)">{{x.name| limitTo:25}}</a>
+										
+										<i ng-if="x.try1" class="material-icons" ng-click="remove($index)" >clear</i>
+									</td>
+								  </tr>
+								  
+								</table> 
+							</div>	
+							
+							<button class="btn btn-primary" ng-click="modal()">{{new1}}</button>
+						</div>
+				</div>	<script type="text/javascript">
+  
+	
+</script>
+</body>
+</html>

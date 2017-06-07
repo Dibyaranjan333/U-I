@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<h1>Demo: JavaScript Object</h1>
+	<p id="p1"></p>
+	<p id="p2"></p>
+	
+	<script>
+		function changeFirstName(per)
+		{
+			per.firstName = "Steve";
+		}
+
+		var person = { firstName : "Bill" };
+		
+		document.getElementById("p1").innerHTML = person.firstName; 
+
+		changeFirstName(person)    
+
+		document.getElementById("p2").innerHTML = person.firstName; 
+		
+    </script>
+</body>
+</html>

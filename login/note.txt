@@ -1,0 +1,33 @@
+$(document).ready
+----------------------------------------------------------------------------
+
+$(document).ready is an event which fires up when document is ready.
+Suppose you have placed your jQuery code in head section and trying to access a dom element (an anchor, an img etc), you will not be able to access it because html is interpreted from top to bottom and your html elements are not present when your jQuery code runs.
+
+To overcome this problem, we place every jQuery/javascript code (which uses DOM) inside $(document).ready function which gets called when all the dom elements can be accessed.
+
+And this is the reason, when you place your jQuery code at the bottom (after all dom elements, just before </body>) , there is no need for $(document).ready
+
+There is no need to place on method inside $(document).ready only when you use on method on document because of the same reason I explained above.
+
+    //No need to put inside $(document).ready
+    $(document).on('click','a',function () {
+    })
+
+    // Need to put inside $(document).ready if placed inside <head></head>
+    $('.container').on('click','a',function () {
+    });
+EDIT
+
+From comments,
+
+$(document).ready does not wait for images or scripts. Thats the big difference between $(document).ready and $(document).load
+Only code that accesses the DOM should be in ready handler. If it's a plugin, it shouldn't be in the ready event.
+
+
+Two syntaxes can be used: 
+-------------------------------
+$(document).ready(function)
+The ready() method can only be used on the current document, so no selector is required:
+
+$(function)

@@ -1,0 +1,3 @@
+own is array function
+----------
+http://www.w3schools.com/js/tryit.asp?filename=tryjs_array_isarray

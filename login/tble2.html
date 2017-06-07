@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Add / Remove Table Rows Dynamically</title>
+<link rel="stylesheet" type="text/css" href="stble.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#now").click(function(){
+			var slno = $("#slno").val();
+		    var firstname = $("#firstname").val();
+            var lastname = $("#lastname").val();
+            var email = $("#email").val();
+			var pno = $("#pno").val();
+			if(slno && firstname && lastname && email && pno)
+				{
+				if(z)
+					{
+					   if(y)
+							{var markup = "<tr><td>" + slno + "</td><td>" + firstname + "</td><td>" + lastname + "</td><td>" + email + "</td><td>" + pno +  "</td></tr>";
+							$("table tbody").append(markup);
+                             }
+						else{
+						       alert("enter valid phone number")
+						    }	 
+					}
+				else
+						{
+						alert("enter valid email")
+						}
+				}
+			
+			else
+			{
+			alert("fill all the value");
+			}
+        });
+    });  
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</script>
+</head>
+
+
+
+<body>
+<div class="well">
+<div class="container">
+    <table >
+        <thead>
+            <tr>
+			  <th>Sl no</th>
+               <th>FirstName</th>
+			   <th>LastName</th>
+                <th>Email</th>
+				<th>Phone Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> <input type="text" class="form-control"id="slno" placeholder="Sl No"></td>
+                <td> <input type="text" class="form-control" id="firstname" placeholder="FirstName"></td>
+				<td> <input type="text" class="form-control" id="lastname" placeholder="LastName"></td>
+                <td> <input type="text" class="form-control" id="email" placeholder="Email "></td>
+				<td><input type="text" class="form-control" id="pno" placeholder="Phone Number"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+<div class="container">
+	<input type="button" class="add-row" id="now" value="Add Row" style="margin-left:"900px">
+</div>
+
+<script type="text/javascript">
+	
+	var y=false;	
+	function ValidatePhone(phone) 
+			{
+				var exp =  /^\d{10}$/;
+				return exp.test(phone);
+			};
+    $(document).ready(function(){
+    $("#pno").mouseleave(function () {
+        if (!ValidatePhone($("#pno").val())) 
+		{
+			y=false;
+			//alert("Invalid phone number ");
+        }
+        else {
+		   y=true;
+			//alert("Valid email address.");
+        }
+    });
+	});
+	
+	
+	var z=false;
+	 function ValidateEmail(email) 
+			 {
+				var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+				return expr.test(email);
+			};
+    $("#now").mouseover(function () {
+        if (!ValidateEmail($("#email").val())) {
+			z=false;
+			//alert("Invalid email address.");
+        }
+        else {
+		   z=true;
+			//alert("Valid email address.");
+        }
+    });
+	
+	
+	</script>
+	
+	
+</body> 
+</html>                                		

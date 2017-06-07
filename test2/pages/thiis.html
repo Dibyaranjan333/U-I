@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AngularJS Demonstration</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="csslib/bootstrap.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+
+    <style>
+    .username.ng-valid {
+        background-color: green;
+    }
+    .username.ng-dirty.ng-invalid-required {
+        background-color: red;
+    }
+    .username.ng-dirty.ng-invalid-minlength {
+        background-color: lightpink;
+    }
+</style>
+
+</head>
+
+<body class="container">
+
+    <div class="jumbotron">
+        <h1>AngularJS Example</h1>
+    </div>
+
+    <div class="ng-cloak" data-ng-app="myApp0" data-ng-controller="ZeroController as Ctrl">
+        <button data-ng-click="Ctrl.expandAll()"><span class="glyphicon glyphicon-collapse-down"></span> Expand All</button>
+        <button data-ng-click="Ctrl.collapseAll()"><span class="glyphicon glyphicon-collapse-up"></span> Collapse All</button>
+        <hr>
+    </div>
+
+    <!-- First demo: Double Curly and ng-bind -->
+    <div id="myApp1ID" class="ng-cloak" data-ng-app="myApp1" data-ng-controller="FirstController as Ctrl">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#demo1" data-ng-bind="Ctrl.demoTitle"></a>
+                </h4>
+            </div>
+            <div id="demo1" class="collapse panel-collapse">
+                <div class="panel-body">
+                    {{Ctrl.helloMessage}}
+                    <br/> <span data-ng-bind="Ctrl.goodbyeMessage"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seccond demo: ng-click -->
+    <div id="myApp2ID" data-ng-app="myApp2" data-ng-controller="SeccondController as Ctrl2">
+
+        <div class="panel panel-default">
+
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#demo2" data-ng-bind="Ctrl2.demoTitle"></a>
+                </h4>
+            </div>
+
+            <div id="demo2" class="collapse panel-collapse">
+                <div class="panel-body">
+                    <button type="button" class="btn btn-info btn-lg" data-ng-click="Ctrl2.changeMessage()">{{Ctrl2.message}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Third demo: ng-repeat and child controller -->
+    <div id="myApp3ID" data-ng-controller="ThirdController as parCtrl">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#demo3" data-ng-bind="parCtrl.demoTitle"></a>
+                </h4>
+            </div>
+
+            <div id="demo3" class="collapse panel-collapse">
+                <div class="panel-body">
+                    <button class="btn btn-success btn-sm" data-ng-click="parCtrl.addItem()"><span class="glyphicon glyphicon-"></span> Add Item</button>
+
+                    <!-- START ng-repeat -->
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody class="tbody">
+                                <thead class="thead">
+                                    <td class="td">Label</td>
+                                    <td class="td">Status</td>
+                                    <td class="td">Remove</td>
+                                </thead>
+                                <tr class="tr" data-ng-repeat="note in parCtrl.notes">
+                                    <td class="td">
+                                        <span class="label label-info ng-cloak">{{note.label}}</span>
+                                    </td>
+                                    <td class="td">
+                                        <span class="label label-primary" data-ng-bind="note.status"></span></td>
+                                    <td class="td">
+                                        <button class="btn btn-danger btn-xs" data-ng-click="parCtrl.removeItem(note)">
+                                            <span class="glyphicon glyphicon-remove"></span> Remove
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <span>{{messageFromRoot}}</span>
+                    <!-- START ng-repeat -->
+
+                    <!-- START child controller -->
+                    <div data-ng-controller="ChildThirdController as childCtrl">
+                        <span class="ng-cloak">{{parCtrl.helloMessage}}</span>
+                        <br/>
+                        <span class="ng-cloak">{{childCtrl.helloMessage}}</span>
+                        <br/>
+                        <span class="ng-cloak">{{messageFromParent}}</span>
+                    </div>
+                    <!-- END child controller -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fourth demo: ng-show, ng-hide and ng-class, ng-repeat over an Object, ng-repeat helper variables-->
+    <div id="myApp4ID" data-ng-app="myApp4" data-ng-controller="FourthController as Ctrl">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#demo4" data-ng-bind="Ctrl.demoTitle"></a>
+                </h4>
+            </div>
+
+            <div id="demo4" class="collapse panel-collapse">
+                <div class="panel-body">
+
+                    <!-- START ng-repeat over an Object -->
+                    <div data-ng-class="Ctrl.getNoteClass()" class="clssdemo">ng-class</div>
+                    <div ng-repeat="(author, note) in Ctrl.notes">
+                        <span class="label label-info"> {{note.label}}</span>
+                        <span class="author" ng-bind="author"></span>
+                    </div>
+                    <!-- END ng-repeat over an Object -->
+
+                    <!-- START ng-repeat helper -->
+                    <div data-ng-repeat="note in Ctrl.arrayNotes">
+                        <span>First Element: {{$first}} - </span>
+                        <span>Middle Element: {{$middle}} - </span>
+                        <span>Last Element: {{$last}} - </span>
+                        <span>Index of Element: {{$index}} - </span>
+                        <span>At Even Position: {{$even}} - </span>
+                        <span>At Odd Position: {{$odd}} - </span>
+                        <span>{{note.label}}</span>
+                    </div>
+                    <!-- END of ng-repeat helper -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fifth demo: ng-repeat track by ID-->
+    <div id="myApp5ID" data-ng-app="myApp5" data-ng-controller="FifthController as ctrl">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#demo5" data-ng-bind="ctrl.demoTitle"></a>
+                </h4>
+            </div>
+
+            <div id="demo5" class="collapse panel-collapse">
+                <div class="panel-body">
+
+                    <button data-ng-click="ctrl.changeNotes()">Change Data</button>
+                    <!-- START ng-repeat track by ID, Across Multiple HTML Elements -->
+                    <div>DOM Elements change every time someone clicks</div>
+                    <div data-ng-repeat-start="note in ctrl.notes1">
+                        {{note.$$hashKey}}
+                        <span class="label label-info"> {{note.label}} </span>
+                        <span class="author" data-ng-bind="note.done"></span>
+                    </div>
+                    <div data-ng-repeat-end>
+                        <span class="author" data-ng-bind="note.id"></span>
+                    </div>
+                    <br/>
+                    <div>DOM Elements are reused every time someone clicks</div>
+                    <div data-ng-repeat="note in ctrl.notes2 track by note.id">
+                        {{note.$$hashKey}}
+                        <span class="label label-info"> {{note.label}} </span>
+                        <span class="author" data-ng-bind="note.done"></span>
+                    </div>
+                    <!-- END of ng-repeat track by ID, Across Multiple HTML Elements -->
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Sixth demo: Forms-->
+    <div id="myApp6ID" data-ng-app="myApp6" data-ng-controller="SixthController as ctrl">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#demo6" data-ng-bind="ctrl.demoTitle"></a>
+                </h4>
+            </div>
+
+            <div id="demo6" class="collapse panel-collapse">
+                <div class="panel-body">
+                    <!-- Form, error messages, css class applied -->
+                    <form data-ng-submit="ctrl.submit()" name="quyForm">
+                        <input class="username" name="username" type="text" data-ng-model="ctrl.user.username1" required data-ng-minlength="4">
+                        <br/>
+                        <span data-ng-show="quyForm.username.$error.required">User name is required</span>
+                        <span data-ng-show="quyForm.username.$error.minlength">Minimum length required is 4</span>
+                        <br/>
+                        <input name="password" type="password" ng-model="ctrl.user.password1" required>
+                        <br/>
+                        <span data-ng-show="quyForm.password.$error.required">Password is required</span>
+                        <br/>
+                        
+                        <input type="checkbox" data-ng-model="ctrl.user.remember">
+                        <span>{{ctrl.user.remember}}</span>
+                        <input type="checkbox" ng-model="ctrl.user.agree" ng-true-value="'YES'" ng-false-value="'NO'">
+                        <span>{{ctrl.user.agree}}</span>
+                        <br/>
+                        <div>
+                            <input type="radio" name="gender" ng-model="ctrl.user.gender" value="male">Male
+                            <input type="radio" name="gender" ng-model="ctrl.user.gender" value="female">Female
+                        </div>
+                        <input type="submit" value="Submit" ng-disabled="quyForm.$invalid">
+                    </form>
+                    <!-- Form, error messages, css class applied -->
+
+                    <!-- Nested form: ng-form inside a html form -->
+                    <form name="myForm">
+                        <input type="text" class="username" name="uname" data-ng-model="ctrl.user.username" required placeholder="Username" data-ng-minlength="4" />
+                        <input type="password" class="password" name="pwd" data-ng-model="ctrl.user.password" placeholder="Password" required />
+                        <ng-form name="profile">
+                            <input type="text" name="firstName" data-ng-model="ctrl.user.profile.firstName" placeholder="First Name" required>
+                            <input type="text" name="middleName" placeholder="Middle Name" data-ng-model="ctrl.user.profile.middleName">
+                            <input type="text" name="lastName" placeholder="Last Name" data-ng-model="ctrl.user.profile.lastName" required>
+                            <input type="date" name="dob" placeholder="Date Of Birth" data-ng-model="ctrl.user.profile.dob">
+                        </ng-form>
+                        <br/>
+                        <div>
+                            <select data-ng-model="ctrl.country" data-ng-options="ctry.name for ctry in ctrl.countries track by ctry.id">
+                            </select>
+                            <span>Selected Country: {{ctrl.country.id}}</span>
+                        </div>
+                        <span ng-show="myForm.profile.$invalid">
+                            Please fill out the profile information
+                        </span>
+                        <br/>
+                        <input type="submit" value="Submit"  />
+                    </form>
+                    <!-- Nested form: ng-form inside a html form -->
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script type="text/javascript" src="jslib/angular.js"></script>
+    <script type="text/javascript" src="jslib/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="jslib/bootstrap.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+#main
+{
+    overflow: hidden;
+    height: 45px;
+    padding: 0 20px;
+    background-color: #fff;
+    margin-left: 57px;
+}
+#main1{
+    overflow: hidden;
+    height: 45px;
+    padding: 0 20px;
+    background-color: black;
+    margin-left: 89px;
+	
+
+}
+#div1{
+  height: 30px;
+  width: 65%;
+  float: left;
+}
+#div1 > p{
+padding:10px;
+}
+
+
+#div2{
+  height: 40px;
+
+}
+#div2 a{
+
+margin-left:20px;
+
+}
+#div2 button{
+
+margin-left:20px;
+width:125px;
+}
+#fst{
+    overflow: hidden;
+    height: 100px;
+    padding: 0 20px;
+    background-color: black;
+}
+#div11{
+  height: 30px;
+  width: 60%;
+  float: left;
+  margin-top:10px;
+}
+#div11 img{
+height:30px;
+}
+#div11 a{
+color:white;
+}
+#div22 ul li {
+display:inline;
+    padding: 20px 12.5px;
+	  
+}
+#div22{
+margin-top: 16px;
+
+}
+#div22 ul li a{ color:white; 
+}
+
+<video class="header__video" loop="" muted="" poster="https://webassets.mongodb.com/_com_assets/home/hero.png" data-reactid="296" autoplay="true" style="display: block;"><source src="https://webassets.mongodb.com/_com_assets/media/mdb-video-hero-hp-mongodb-16-9.webm" type="video/webm" data-reactid="297"><source src="https://webassets.mongodb.com/_com_assets/media/mdb-video-hero-hp-mongodb-16-9.mp4" type="video/mp4" data-reactid="298"></video>
+  

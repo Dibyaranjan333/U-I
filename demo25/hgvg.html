@@ -1,0 +1,21 @@
+	<div class="nav">
+		  <ul>
+				<li class="test nav1" ng-click="slide()"><i class="fa fa-align-left" ></i></li>
+				<li class="dash"style="color: #3e4758;">Dashboard</li>
+				<li class="test circle"> <a> <i class="fa fa-circle-thin"></i> </a></li>
+				<li class="test bell"><a><i class="fa fa-bell-o"></i></a></li>
+				<li id="avatar"><img src="avatr.jpg"><span class="pull-left"> Samuel Perkins </span></li>
+				<li class="last"><i class="fa fa-align-left" ></i></li>
+		  </ul>
+    </div>
+	<div >
+		<ul class="sidenav">
+					<li ng-repeat="x in data" ng-mouseover="hoverIn();show($index)" ng-mouseleave="hoverOut()">
+						<a class="{{x.id}}"></a>
+						<a ng-hide="nval">{{x.val}}</a>
+						<ul class="submenu" ng-show="val==x.clas">
+							<li ng-repeat="z in tmp.sub">{{z.id2}}</li>
+						</ul>
+					</li>
+		</ul>
+	</div>

@@ -1,0 +1,29 @@
+   
+    form{
+        margin: 20px 0;
+    }
+    form input{
+        padding: 5px;
+    }
+	button{
+        padding: 50px;
+    }
+    table{
+        width: 80%;
+        margin-bottom: 20px;
+		margin-left:30px
+		border-collapse: collapse;
+    }
+    table, th, td{
+        border: 1px solid #cdcdcd;
+		margin-left:30px;
+    }
+    table th, table td
+	     {
+        padding: 10px;
+        text-align: left;
+		}
+	button{
+	margin-left:30px;
+	}
+	

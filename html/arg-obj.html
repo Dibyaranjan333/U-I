@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<h1>Demo: JavaScript arguments object</h1>
+	
+	<script>
+		function ShowMessage() {
+			alert("Hello " + arguments[0] + " " + arguments[1]);
+		}
+
+		ShowMessage("Steve", "Jobs"); 
+		ShowMessage("Bill", "Gates");
+		ShowMessage(100, 200);
+    </script>
+</body>
+</html>
+
+
+//The arguments object is an array like object. You can access its values using index similar to array. However, it does not support array methods.
