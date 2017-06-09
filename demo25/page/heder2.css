@@ -4,6 +4,9 @@ body
   padding: 0;
   background: #ccc;
 }
+ul {
+	list-style:none;
+}
 .nav
 {
 	position:relative;
@@ -19,10 +22,11 @@ body
 {
 	margin-top:18px;
 	margin-left:15px;
+	float: right;
+    margin-right: 30px;
 }
 .nav1
 {
-	width:70px;
 	color:#b2b6be;
 	background-color: #495469;
 }
@@ -58,7 +62,6 @@ body
 }
 .nav ul 
 {
-  list-style: none;
   background-color: #fff;
   padding: 0;
   margin: 0;
@@ -84,34 +87,51 @@ body
 	margin-top: 3px;
 	color:#4d525d;
 }
-.slider{
+.slideron{
 	width: 250px;
 }
-.sidenav{
-list-style: none;
-    margin: 0;
+.slideroff{
+	width: 70px;
+}
+.slideroff li {
+		height: 44px;
+}
+.sidenav ul {
+  	  	margin: 0;
 	    margin-left: -40px;	
 }
-.sidenav li{
+.sidenav ul li{
 	background-color: #495469;
-	width: 70px;
-		height: 44px;
-
+	width: 100%;
 }
-.sidenav li a{
-	padding-left: 20px;
+.sidenav ul li ul li a{
+		padding-left: 20px;
 	    padding-top: 10px;
 		color: #b2b6be;
 }
-.submenu{
-	list-style:none;
-	    margin-left: 30px;
+.navhead{
+		height: 40px;
 }
-.sidenav2 li{
-	list-style: none;
-    margin: 0;
-	    margin-left: -40px;	
+.sidenav ul li .submenu li{
+            margin-left: 70px;
+			width: 186px;
+			height: 33px;
+			color: #b2b6be;
+    		background-color:#495469;
 }
-.submenu li {
-	color: #b2b6be;
+.sidenav ul li .submenu{
+	margin-top: -48px;
+}
+.sidenav ul li .submenudrop li{
+            margin-left: 64px;
+			width: 186px;
+			height: 33px;
+			color: #b2b6be;
+    		background-color:#495469;
+}
+.slideroff .sideMenuIcon:hover .sideSubmenu{
+	display: block;
+}
+.slideroff .sideMenuIcon .sideSubmenu{
+	display: none;
 }

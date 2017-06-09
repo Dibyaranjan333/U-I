@@ -1,6 +1,6 @@
 	<div class="nav">
 		  <ul>
-				<li class="test nav1" ng-click="slide()"><i class="fa fa-align-left" ></i></li>
+				<li class="test nav1" ng-class="slideclass" ><i class="fa fa-align-left" ng-click="slide()" ></i><h4 ng-if="nval" >URBAN</h4></li>
 				<li class="dash"style="color: #3e4758;">Dashboard</li>
 				<li class="test circle"> <a> <i class="fa fa-circle-thin"></i> </a></li>
 				<li class="test bell"><a><i class="fa fa-bell-o"></i></a></li>
@@ -8,14 +8,18 @@
 				<li class="last"><i class="fa fa-align-left" ></i></li>
 		  </ul>
     </div>
-	<div >
-		<ul class="sidenav">
-					<li ng-repeat="x in data" ng-mouseover="hoverIn();show($index)" ng-mouseleave="hoverOut()">
-						<a class="{{x.id}}"></a>
-						<a ng-hide="nval">{{x.val}}</a>
-						<ul class="submenu" ng-show="val==x.clas">
-							<li ng-repeat="z in tmp.sub">{{z.id2}}</li>
-						</ul>
-					</li>
+	<div class="sidenav" >
+		<ul  ng-class="slideclass">
+				<li class="sideMenuIcon" ng-repeat="x in data" >
+							<ul class="navhead">
+								<li >
+									<a class="{{x.id}}" ng-mouseover="dropit(x.sub[0].id2)"></a>
+									<a ng-show="nval" ng-click="dropit(x.sub[0].id2)">{{x.val}}</a>
+								</li>
+							</ul>
+							<ul ng-class="dropmenu"  class="sideSubmenu" ng-if="xid==x.sub[0].id2">
+								<li  ng-repeat="z in x.sub">{{z.id2}}</li>
+							</ul>
+				</li>
 		</ul>
 	</div>
