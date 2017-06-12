@@ -1,5 +1,5 @@
 {"obj":[
- { "id": "fa fa-flask" ,"val":"DASHBOARD"},
+ { "id": "fa fa-flask" ,"val":"DASHBOARD","sub":[]},
  { "id": "fa fa-toggle-on","clas":"tog","val":"UI Elements","sub":[
 															 {"id2":"Button"},
 															 {"id2":"General"},
@@ -65,8 +65,8 @@
 															 {"id2":"Starter Page"}
 								]
  },
- { "id": "fa fa-toggle-on","val":"Widgets"},
- { "id": "fa fa-level-down","val":"Menu Levels"},
+ { "id": "fa fa-toggle-on","val":"Widgets","sub":[]},
+ { "id": "fa fa-level-down","val":"Menu Levels","sub":[]},
  { "id": "fa fa-envelope","clas":"env","val":"Transational Emails","sub":[
 															 {"id2":"Action"},
 															 {"id2":"Alert"},
@@ -76,8 +76,8 @@
 															 {"id2":"Welcome"}
 								]
  },
- { "id": "fa fa-sliders","val":"Customizer"},
- { "id": "fa fa-folder","val":"Documentation"},
- { "id": "fa fa-circle","val":"HTML Version"}
+ { "id": "fa fa-sliders","val":"Customizer","sub":[]},
+ { "id": "fa fa-folder","val":"Documentation","sub":[]},
+ { "id": "fa fa-circle","val":"HTML Version","sub":[]}
  ]
 }

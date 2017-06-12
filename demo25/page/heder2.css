@@ -109,6 +109,11 @@ ul {
 	    padding-top: 10px;
 		color: #b2b6be;
 }
+.sidenav ul li ul li a:hover{
+transition-delay: 0.1s;
+color:white;
+padding-left: 22px;
+}
 .navhead{
 		height: 40px;
 }
@@ -120,18 +125,32 @@ ul {
     		background-color:#495469;
 }
 .sidenav ul li .submenu{
-	margin-top: -48px;
+	margin-top: -40px;
 }
 .sidenav ul li .submenudrop li{
-            margin-left: 64px;
-			width: 186px;
+            margin-left: 0px;
+			width: 250px;
 			height: 33px;
 			color: #b2b6be;
     		background-color:#495469;
 }
+.sidenav ul li .submenudrop li a{
+			
+            padding-left: 60px;
+}
+.sidenav ul li .submenudrop li a:hover{
+	padding-left: 60px;
+}
 .slideroff .sideMenuIcon:hover .sideSubmenu{
-	display: block;
+	display: block !important;
 }
 .slideroff .sideMenuIcon .sideSubmenu{
 	display: none;
+}
+.sidenav  ul li .sideSubmenu li a:hover{
+	transition-delay: 0.1s;
+	color: white;
+}
+.sidenav ul li:hover {
+    background-color:#3f485a;
 }

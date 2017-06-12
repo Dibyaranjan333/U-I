@@ -9,16 +9,16 @@
 		  </ul>
     </div>
 	<div class="sidenav" >
-		<ul  ng-class="slideclass">
+		<ul  ng-class="{slideron:nval==true,slideroff:nval==false}">
 				<li class="sideMenuIcon" ng-repeat="x in data" >
 							<ul class="navhead">
 								<li >
-									<a class="{{x.id}}" ng-mouseover="dropit(x.sub[0].id2)"></a>
-									<a ng-show="nval" ng-click="dropit(x.sub[0].id2)">{{x.val}}</a>
+									<a class="{{x.id}}" style="font-size: 12px;"></a>
+									<a ng-show="nval" ng-click="toggle($index);">{{x.val}}</a>
 								</li>
 							</ul>
-							<ul ng-class="dropmenu"  class="sideSubmenu" ng-if="xid==x.sub[0].id2">
-								<li  ng-repeat="z in x.sub">{{z.id2}}</li>
+							<ul ng-class="{submenu:nval==true,submenudrop:nval==false}" class="sideSubmenu" ng-show="subChild[$index]">
+								<li  ng-repeat="z in x.sub"><a>{{z.id2}}</a></li>
 							</ul>
 				</li>
 		</ul>
