@@ -7,15 +7,10 @@ app.factory('Factory', ['$http', function ($http) {
 	}
 }
 ]);
-app.controller('Mcrt', ['$scope', 'Factory', function ($scope, Factory) {
+app.controller('Mcrt', ['$scope', 'Factory', function ($scope, Factory)
+{
+	$scope.righticon = [];
 	$scope.nval = false;
-	$scope.subChild = [];
-	
-	$scope.slideclass = 'slideroff';
-	$scope.dropmenu = 'submenu';
-	$scope.slidedrop = false;
-	$scope.dropvar = false;
-	$scope.temp = null;
 	Factory.data().then(
 		function resolved(response) {
 			$scope.data = response.data;
@@ -24,61 +19,37 @@ app.controller('Mcrt', ['$scope', 'Factory', function ($scope, Factory) {
 			alert(response.status + ': ' + response.statusText);
 		}
 	);
-	$scope.slide = function () {
-		// var dashmove = angular.element(document.querySelector('.dash'));
-		// if ($scope.nval == true) {
-		// 	$scope.slideclass = 'slideroff';
-		// 	dashmove.css('marginLeft', '80px');
-		// 	$scope.nval = false;
-		// 	$scope.dropmenu = 'submenu';
-		// 	$scope.slidedrop = false;
-		// }
-		// else {
-		// 	$scope.slideclass = 'slideron';
-		// 	dashmove.css('marginLeft', '260px');
-		// 	$scope.nval = true;
-		// 	$scope.dropmenu = 'submenudrop';
-		// 	$scope.slidedrop = true;
-		// }
-
+	$scope.slide = function () 
+	{
 		$scope.nval=!$scope.nval;
+		for(var i = 0; i < $scope.data.length; i++)
+		{
+			if($scope.data[i].sub.length > 1)
+				{
+					$scope.righticon[i]='fa fa-chevron-right';
+				}
+			else
+				{
+					$scope.righticon[i]='';
+				}
+			if(!$scope.nval)
+				{
+					$scope.righticon[i]='';
+				}
+		}
 	};
-	// $scope.dropit = function (x, y) {
-	// 	$scope.select = y;
-
-	// 	if ($scope.select == $scope.temp) {
-	// 		if ($scope.dropvar == false) {
-	// 			$scope.xid = x;
-	// 			$scope.dropvar = true;
-	// 		}
-	// 		else {
-	// 			$scope.xid = '';
-	// 			$scope.dropvar = false;
-	// 		}
-
-	// 		$scope.temp = $scope.select;
-	// 	}
-	// 	else {
-	// 		$scope.xid = x;
-	// 		$scope.temp = $scope.select;
-	// 	}
-	// };
-	// $scope.dropitover = function (x) {
-	// 	console.log(x);
-	// 	$scope.xid = x;
-	// };
-
-	
-	$scope.toggle = function (index) {
+	$scope.subChild = [];
+	$scope.toggle = function (index) 
+	{
 		$scope.subChild[index] = !$scope.subChild[index];
-		console.log($scope.data);
-		console.log($scope.data[0].sub.length);
-		for (var i = 0; i < $scope.data.length; i++) {
-			if (i != index) {
-				$scope.subChild[i] = false;
+		for (var i = 0; i < $scope.data.length; i++) 
+		{
+			if (i != index) 
+			{
+				$scope.subChild[i] = false;	
 			}
-
+			
+		}
 	}
-}
 }
 ]);

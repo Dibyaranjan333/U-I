@@ -109,10 +109,9 @@ ul {
 	    padding-top: 10px;
 		color: #b2b6be;
 }
-.sidenav ul li ul li a:hover{
+.sidenav ul li ul li:hover a{
 transition-delay: 0.1s;
 color:white;
-padding-left: 22px;
 }
 .navhead{
 		height: 40px;
@@ -153,4 +152,27 @@ padding-left: 22px;
 }
 .sidenav ul li:hover {
     background-color:#3f485a;
+}
+.sidenav ul li ul li .makesmall{
+	font-size: 13px;
+}
+.sidenav ul li ul li .middle{
+	
+}
+.sidenav ul li ul li .right{
+	font-size: 10px;
+	float: right;
+    padding-top: 0px;
+    margin-top: 10px;
+    padding-left: 0;
+    margin-right: 36px;
+}
+.sidenav ul li ul li .rotateon{
+	    transition: all 0.1s linear;
+	transform:rotate(90deg);
+}
+.sidenav ul li ul li .rotateoff{
+		
+		    transition: all 0.1s linear;
+	    
 }

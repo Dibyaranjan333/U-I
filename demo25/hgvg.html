@@ -1,7 +1,7 @@
 	<div class="nav">
 		  <ul>
-				<li class="test nav1" ng-class="slideclass" ><i class="fa fa-align-left" ng-click="slide()" ></i><h4 ng-if="nval" >URBAN</h4></li>
-				<li class="dash"style="color: #3e4758;">Dashboard</li>
+				<li class="test nav1" ng-class="{slideron:nval==true,slideroff:nval==false}" ><i class="fa fa-align-left" ng-click="slide()" ></i><h4 ng-if="nval" >URBAN</h4></li>
+				<li class="dash"ng-style="{ marginLeft: nval == false? '80px' : '260px' }" style="color: #3e4758;">Dashboard</li>
 				<li class="test circle"> <a> <i class="fa fa-circle-thin"></i> </a></li>
 				<li class="test bell"><a><i class="fa fa-bell-o"></i></a></li>
 				<li id="avatar"><img src="avatr.jpg"><span class="pull-left"> Samuel Perkins </span></li>
@@ -10,16 +10,17 @@
     </div>
 	<div class="sidenav" >
 		<ul  ng-class="{slideron:nval==true,slideroff:nval==false}">
-				<li class="sideMenuIcon" ng-repeat="x in data" >
-							<ul class="navhead">
-								<li >
-									<a class="{{x.id}}" style="font-size: 12px;"></a>
-									<a ng-show="nval" ng-click="toggle($index);">{{x.val}}</a>
-								</li>
-							</ul>
-							<ul ng-class="{submenu:nval==true,submenudrop:nval==false}" class="sideSubmenu" ng-show="subChild[$index]">
-								<li  ng-repeat="z in x.sub"><a>{{z.id2}}</a></li>
-							</ul>
-				</li>
+			<li class="sideMenuIcon" ng-repeat="x in data" >
+				<ul class="navhead">
+					<li >
+						<a class="{{x.id}} makesmall" ></a>
+						<a class="middle" ng-show="nval" ng-click="toggle($index);">{{x.val}}</a>
+						<a class="{{righticon[$index]}}  right" ng-class="{rotateon:subChild[$index]==true,rotateoff:subChild[$index]==false}" ></a>
+					</li>
+				</ul>
+				<ul ng-class="{submenu:nval==false,submenudrop:nval==true}"  class="sideSubmenu" ng-show="subChild[$index]">
+					<li  ng-repeat="z in x.sub"><a>{{z.id2}}</a></li>
+				</ul>
+			</li>
 		</ul>
 	</div>
