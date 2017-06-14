@@ -12,9 +12,9 @@
 		<ul  ng-class="{slideron:nval==true,slideroff:nval==false}">
 			<li class="sideMenuIcon" ng-repeat="x in data" >
 				<ul class="navhead">
-					<li >
+					<li ng-click="toggle($index);">
 						<a class="{{x.id}} makesmall" ></a>
-						<a class="middle" ng-show="nval" ng-click="toggle($index);">{{x.val}}</a>
+						<a class="middle" ng-show="nval" >{{x.val}}</a>
 						<a class="{{righticon[$index]}}  right" ng-class="{rotateon:subChild[$index]==true,rotateoff:subChild[$index]==false}" ></a>
 					</li>
 				</ul>

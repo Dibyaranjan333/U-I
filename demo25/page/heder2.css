@@ -89,18 +89,19 @@ ul {
 }
 .slideron{
 	width: 250px;
+	padding: 0;
 }
 .slideroff{
 	width: 70px;
+	padding: 0;
 }
 .slideroff li {
 		height: 44px;
 }
 .sidenav ul {
   	  	margin: 0;
-	    margin-left: -40px;	
 }
-.sidenav ul li{
+.sidenav ul .sideMenuIcon{
 	background-color: #495469;
 	width: 100%;
 }
@@ -109,15 +110,12 @@ ul {
 	    padding-top: 10px;
 		color: #b2b6be;
 }
-.sidenav ul li ul li:hover a{
-transition-delay: 0.1s;
-color:white;
-}
 .navhead{
 		height: 40px;
+		padding: 0;
 }
 .sidenav ul li .submenu li{
-            margin-left: 70px;
+            margin-left: 30px;
 			width: 186px;
 			height: 33px;
 			color: #b2b6be;
@@ -125,6 +123,9 @@ color:white;
 }
 .sidenav ul li .submenu{
 	margin-top: -40px;
+}
+.sidenav ul li .submenudrop{
+	padding: 0;
 }
 .sidenav ul li .submenudrop li{
             margin-left: 0px;
@@ -150,8 +151,9 @@ color:white;
 	transition-delay: 0.1s;
 	color: white;
 }
-.sidenav ul li:hover {
+.sidenav ul .sideMenuIcon:hover {
     background-color:#3f485a;
+	cursor: pointer;
 }
 .sidenav ul li ul li .makesmall{
 	font-size: 13px;
