@@ -12,10 +12,12 @@ app.controller('Mcrt', ['$scope', 'Factory', function ($scope, Factory)
 	$scope.righticon = [];
 	$scope.nval = false;
 	Factory.data().then(
-		function resolved(response) {
+		function resolved(response) 
+		{
 			$scope.data = response.data;
 		},
-		function rejected(response) {
+		function rejected(response)
+		 {
 			alert(response.status + ': ' + response.statusText);
 		}
 	);
@@ -40,16 +42,19 @@ app.controller('Mcrt', ['$scope', 'Factory', function ($scope, Factory)
 	};
 	$scope.subChild = [];
 	$scope.toggle = function (index) 
-	{
+	{	
+		$scope.active = [];
 		$scope.subChild[index] = !$scope.subChild[index];
 		for (var i = 0; i < $scope.data.length; i++) 
 		{
 			if (i != index) 
 			{
-				$scope.subChild[i] = false;	
+				$scope.subChild[i] = false;
+				$scope.active[i]=false;	
 			}
-			
+			console.log(i);
 		}
-	}
+			$scope.active[index]=true;	
+	};
 }
 ]);

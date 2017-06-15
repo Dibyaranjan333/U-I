@@ -28,7 +28,7 @@
 															 {"id2":"Responsive Table"},
 															 {"id2":"Data Tables"},
 															 {"id2":"Editable Table"}
-								]
+														]
  },
  { "id": "fa fa-pie-chart","clas":"flow","val":"Charts","sub":[
 															 {"id2":"Flot Charts"},
