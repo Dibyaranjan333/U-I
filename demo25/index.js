@@ -1,87 +1,84 @@
-var app = angular.module('main',[])	
-app.factory('Factory', ['$http',function($http){
-        return {
-            data: function () {
-                return $http.get('http://localhost:3000/obj');
-            }
-        }
-    }
+var app = angular.module('main', ['ngRoute'])
+app.factory('Factory', ['$http', function ($http) {
+	return {
+		data: function () {
+			return $http.get('http://localhost:3000/obj');
+		}
+	}
+}
 ]);
-app.controller('Mcrt',['$scope', 'Factory',function ($scope,Factory){
-	$scope.nval=true;
-        Factory.data().then(
-            function resolved (response) {
-                $scope.data = response.data;
-				//console.log($scope.data[1].sub);
-            },
-            function rejected (response) {
-                alert(response.status + ': ' + response.statusText);
-            }
-        );
-		$scope.show=function(x){
-			
-			$scope.tmp=$scope.data[x].sub;
-			$scope.clas=$scope.data[x].clas;
-			
-		};	
-		$scope.hoverIn = function(){
-        $scope.hoverEdit = true;
-		};
-		$scope.hoverOut = function(){
-			$scope.hoverEdit = false;
-		};
-		$scope.slide=function(){
-			var myEl = angular.element( document.querySelector( '.subnav' ) );
-			var navslider = angular.element( document.querySelector( '.sidenav >ul' ) );
-			var dashmove = angular.element( document.querySelector( '.dash' ) );
-			if($scope.nval==false)
+app.controller('Mcrt', ['$scope', 'Factory', function ($scope, Factory)
+{
+	$scope.righticon = [];
+	$scope.nval = false;
+	Factory.data().then(
+		function resolved(response) 
+		{
+			$scope.data = response.data;
+		},
+		function rejected(response)
+		 {
+			alert(response.status + ': ' + response.statusText);
+		}
+	);
+	$scope.slide = function () 
+	{
+		$scope.nval=!$scope.nval;
+		for(var i = 0; i < $scope.data.length; i++)
+		{
+			if($scope.data[i].sub.length > 1)
 				{
-					myEl.removeClass('slider');
-					navslider.css('width','30px');
-					dashmove.css('marginLeft','80px');
-					$scope.nval=true;
+					$scope.righticon[i]='fa fa-chevron-right';
 				}
 			else
 				{
-				myEl.addClass('slider');	
-				navslider.css('width','210px');	
-				dashmove.css('marginLeft','260px');
-				$scope.nval=false;																								
+					$scope.righticon[i]='';
 				}
-		};
-		$scope.dropfunc=function(x)
-		{	
-			console.log(x);
-	
-			switch (x) {
-            case 0:
-                break;
-            case 1:
-                $scope.emp=$scope.data[x].sub;
-				var dd = angular.element( document.querySelector( '#nd2' ) );
-				dd.css('height','350px');				
-                break;
-			case 2:
-                $scope.emp=$scope.data[x].sub;
-                break;
-			case 3:
-               $scope.emp=$scope.data[x].sub;
-                break;
-			case 4:
-               $scope.emp=$scope.data[x].sub;
-                break;
-			case 5:
-               $scope.emp=$scope.data[x].sub;
-                break;
-			case 6:
-                $scope.emp=$scope.data[x].sub;
-                break;
-			
-			
-
-        }
+			if(!$scope.nval)
+				{
+					$scope.righticon[i]='';
+				}
 		}
+	};
+	$scope.subChild = [];
+	$scope.toggle = function (index,x) 
+	{	
+		$scope.active = [];
+		$scope.subrighticon = [];
+		$scope.subChild[index] = !$scope.subChild[index];
+		for (var i = 0; i < $scope.data.length; i++) 
+		{
+			if (i != index) 
+			{
+				$scope.subChild[i] = false;
+				$scope.active[i]=false;	
+			}
+		}
+			$scope.active[index]=true;
+
+		//console.log(x);
+		//console.log(x.length);
+		for(var i = 0; i < x.length; i++)
+		{	
+			 if(x[i].IconSub != undefined)
+			 {
+			 	$scope.subrighticon[i]='fa fa-chevron-right';
+			 }
+			
+			//console.log($scope.data[index].sub[i].IconSub);
+		}	
+	};
+	$scope.subchild2=[];
+	$scope.subtoggle=function(index)
+	{	
+		console.log(index);
+		$scope.subchild2[index] = !$scope.subchild2[index];
 		
-		
-    }
+	}
+	$scope.subchild3=false;
+	$scope.subtoggle2=function()
+	{	
+		$scope.subchild3=!$scope.subchild3;
+	}
+}
 ]);

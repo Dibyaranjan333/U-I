@@ -130,9 +130,17 @@ ul {
 	width: 100%;
 }
 .sidenav ul li ul li a{
-		padding-left: 20px;
-	    padding-top: 10px;
 		color: #b2b6be;
+}
+.sidenav ul li ul li #idd{
+	    margin-left: 27px;
+    margin-top: 12px;
+    position: absolute;
+}
+.sidenav ul li ul li  .midvalue{
+	position: absolute;
+    margin-left: 59px;
+    margin-top: 9px;
 }
 .sidenav ul li ul li:hover a{
 transition-delay: 0.1s;
@@ -143,13 +151,15 @@ color:white;
 		height: 40px;
 		padding: 0;
 }
-
 .sidenav ul li .submenu li{
             margin-left: 30px;
 			width: 186px;
 			height: 33px;
 			color: #b2b6be;
-    		background-color:#495469;
+    		background-color:#434d60;
+}
+.sidenav ul li .submenu li a{
+		padding-left: 14px;
 }
 .sidenav ul li .submenu{
 	margin-top: -40px;
@@ -160,16 +170,13 @@ color:white;
 .sidenav ul li .submenudrop li{
             margin-left: 0px;
 			width: 250px;
-			height: 33px;
+			padding-top: 16px;
 			color: #b2b6be;
     		background-color:#495469;
 }
-.sidenav ul li .submenudrop li a{
-			
-            padding-left: 60px;
-}
-.sidenav ul li .submenudrop li a:hover{
-	padding-left: 60px;
+.sidenav ul li .submenudrop li a
+{
+	    margin-left: 60px;
 }
 .slideroff .sideMenuIcon:hover .sideSubmenu{
 	display: block !important;
@@ -177,7 +184,10 @@ color:white;
 .slideroff .sideMenuIcon .sideSubmenu{
 	display: none;
 }
-.sidenav  ul li .sideSubmenu li a:hover{
+.slideroff .sideMenuIcon .sideSubmenu li{
+	padding-top: 5px;
+}
+.sidenav  ul li .sideSubmenu li .subname:hover{
 	transition-delay: 0.1s;
 	color: white;
 }
@@ -187,10 +197,6 @@ color:white;
 }
 .sidenav ul li ul li .makesmall{
 	font-size: 13px;
-}
-.sidenav ul li ul:hover .makesmall{
-		transition-delay: 0.1s;
-	    margin-left: 4px;
 }
 .sidenav ul li ul li .right{
 	font-size: 10px;
@@ -216,4 +222,39 @@ color:white;
     font-size: 12px;
     height: 10px;
     color: #d96557;
+}
+.sidenav ul .navhead:hover li #idd{
+    color:white;
+        margin-left: 29px;
+}
+.sideMenuIcon{
+	position: relative;
+}
+.sidenav ul li .submenudrop li .subchildclass{
+    width: 227px;
+	    margin-left: -17px;
+
+}
+.sidenav ul li .submenudrop li .subchildclass a{
+	    color: #b2b6be;
+}
+.sidenav ul li .submenudrop li .subchildclass:hover a{
+	    color: #f8f8f8;
+}
+.sidenav ul li .submenudrop .subright 
+{
+	float: right;
+    font-size: 10px;
+    margin-right: 36px;
+}
+.sidenav ul li .submenudrop li ul li .subright2
+{
+	    float: right;
+    margin-right: 34px;
+    font-size: 11px;
+}
+.sidenav ul li .submenudrop li .subchildclass ul .subchildclass2
+{
+	width: 170px;
+	margin-left: -13px;
 }

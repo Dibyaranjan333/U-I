@@ -5,7 +5,8 @@
 		<script src="bower_components/angular/angular.min.js"></script>
 		<script src="bower_components/angular-route/angular-route.min.js"></script>
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
-		<script src="index2.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+		<script src="index.js"></script>
 		<link rel="stylesheet" href="page/heder2.css">
 		<link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.min.css">
 </head>
@@ -13,11 +14,51 @@
 	<body ng-app="main">	
 
 			<div  ng-controller="Mcrt"> 
-			  <div ng-include="'hgvg.html'"></div>
+
+
+					<div class="nav">
+						<ul>
+								<li class="test nav1" ng-class="{slideron:nval==true,slideroff:nval==false}" ><i class="fa fa-align-left" ng-click="slide()" ></i><h4 ng-if="nval" style="margin-left: 21px;">URBAN</h4></li>
+								<li class="dash"ng-style="{ marginLeft: nval == false? '80px' : '260px' }" style="color: #3e4758;">Dashboard</li>
+								<li class="test1 circle"> <a> <i class="fa fa-circle-thin"></i> </a></li>
+								<li class="test1 bell"><a><i class="fa fa-bell-o"></i><i class="fa fa-circle subcircle"></i></a></li>
+								<li id="avatar"><img src="avatr.jpg"><span class="pull-left"> Samuel Perkins </span></li>
+								<li class="last"><i class="fa fa-align-left" ></i></li>
+						</ul>
+					</div>
+					<div class="sidenav" ng-style="{ width: nval == false? '70px' : '250px', height: nval == false? '' : '500px' }" >
+						<ul  ng-class="{slideron:nval==true,slideroff:nval==false}">
+							<li class="sideMenuIcon" ng-repeat="x in data" >
+								<ul class="navhead" ng-click="toggle($index,x.sub);" ng-style=" active[$index] && {'background':'#3f485a'}"> 
+									<li style="position: relative;" >
+										<a class="{{x.id}} makesmall" id="idd"  ng-style=" active[$index] && {'color':'white'}" ></a>
+										<a ng-show="nval" class="midvalue" ng-style=" active[$index] && {'color':'white'}">{{x.val}}</a>
+										<a class="{{righticon[$index]}}  right" ng-class="{rotateon:subChild[$index]==true,rotateoff:subChild[$index]==false}" ng-style=" active[$index] && {'color':'white'}"></a>
+									</li>
+								</ul>
+								<ul ng-class="{submenu:nval==false,submenudrop:nval==true}"  class="sideSubmenu" ng-show="subChild[$index]">
+									<li  ng-repeat="z in x.sub"><a class="subname " ng-click="subtoggle($index)">{{z.id2}}</a><i class="{{subrighticon[$index]}} subright" ng-class="{rotateon:subchild2[$index]==true,rotateoff:subchild2[$index]==false}"></i>
+										<ul ng-show="subchild2[$index]">
+											<li class="subchildclass" ng-repeat="icon in z.IconSub">
+													<a ng-click="subtoggle2()">	{{icon.id3}}</a><i class="{{subrighticon[$index]}} subright2" ng-class="{rotateon:subchild3==true,rotateoff:subchild3==false}"></i>
+														<ul ng-show="subchild3">
+															<li class="subchildclass2" ng-repeat="icon2 in icon.IconSub2">
+																<a>	{{icon2.id3}}</a>
+															</li>
+														</ul>	
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+
+
+			 <div ng-view></div>
 			</div>	
 		
 	</body>
 
 
 </html>
-

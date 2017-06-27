@@ -10,7 +10,14 @@
 															 {"id2":"Portlets"},
 															 {"id2":"Notifications"},
 															 {"id2":"Alerts"},
-															 {"id2":"Icons"}
+															 {"id2":"Icons",
+																		"IconSub":
+																		[
+																			{"id3":"Fontawesome"},
+																			{"id3":"Feather"},
+																			{"id3":"Climacon"}
+																		]
+															 }
 												]
  },
  { "id": "fa fa-tint","clas":"drop","val":"Forms","sub":[
@@ -39,7 +46,7 @@
 															 {"id2":"C3js"}
 								]
  },
- { "id": "fa fa-map-marker","clas":"map","val":"Maps","sub":[
+ { "id": "fa fa-map-marker","clas":"map","val":"Maps","spanval":"2","sub":[
 															 {"id2":"Google Maps"},
 															 {"id2":"Vector Maps"}
 								]
@@ -66,7 +73,21 @@
 								]
  },
  { "id": "fa fa-toggle-on","val":"Widgets","sub":[]},
- { "id": "fa fa-level-down","val":"Menu Levels","sub":[]},
+ { "id": "fa fa-level-down","val":"Menu Levels","sub":[
+	 														 {"id2":"Level 1.1","IconSub":
+																		[
+																			{"id3":"Level 2.1","IconSub2":
+																											[
+																												{"id3":"Level 3.1"},
+																												{"id3":"Level 3.2"}
+																											]
+																			},
+																			{"id3":"Level 2.2"}
+																		]
+															},
+															 {"id2":"Level 1.2"}
+													 ]
+},
  { "id": "fa fa-envelope","clas":"env","val":"Transational Emails","sub":[
 															 {"id2":"Action"},
 															 {"id2":"Alert"},
@@ -76,8 +97,8 @@
 															 {"id2":"Welcome"}
 								]
  },
- { "id": "fa fa-sliders","val":"Customizer","sub":[]},
+ { "id": "fa fa-sliders","val":"Customizer","spanval":"Hot","sub":[]},
  { "id": "fa fa-folder","val":"Documentation","sub":[]},
- { "id": "fa fa-circle","val":"HTML Version","sub":[]}
+ { "id": "fa fa-circle","val":"HTML Version","spanval":"New","sub":[]}
  ]
 }
