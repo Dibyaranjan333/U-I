@@ -3,6 +3,7 @@ body
   margin: 0;
   padding: 0;
   background: #ccc;
+  overflow: scroll;
 }
 ul {
 	list-style:none;
@@ -46,12 +47,12 @@ ul {
 }
 .circle
 {
-	margin-left:77%;
+	margin-left:1036px;
 	width:42px;
 }
 .bell
 {
-	margin-left:80%;
+	margin-left:1080px;
 	width:42px;
 }
 #avatar
@@ -160,6 +161,7 @@ color:white;
 }
 .sidenav ul li .submenu li a{
 		padding-left: 14px;
+		text-decoration: none;
 }
 .sidenav ul li .submenu{
 	margin-top: -40px;
@@ -177,6 +179,7 @@ color:white;
 .sidenav ul li .submenudrop li a
 {
 	    margin-left: 60px;
+		text-decoration: none;
 }
 .slideroff .sideMenuIcon:hover .sideSubmenu{
 	display: block !important;
@@ -189,7 +192,7 @@ color:white;
 }
 .sidenav  ul li .sideSubmenu li .subname:hover{
 	transition-delay: 0.1s;
-	color: white;
+	color: white;	
 }
 .sidenav ul .sideMenuIcon:hover {
     background-color:#3f485a;
@@ -215,7 +218,7 @@ color:white;
 }
 .nav ul li .subcircle
 {
-	       position: absolute;
+	position: absolute;
     width: 11px;
     margin-top: 12px;
     margin-left: 21px;
@@ -257,4 +260,15 @@ color:white;
 {
 	width: 170px;
 	margin-left: -13px;
+}
+body .uibody div
+{
+	display: inline-block;
+}
+.uibody{
+	position: relative;
+}
+body .uibody .uiview
+{
+	position: absolute;
 }
