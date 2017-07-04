@@ -223,7 +223,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
                         templateUrl: "page/extras/StarterPage.html"
                     })
 
-                    .state('Level 1_1Level 2_1Level 3.1', {
+                    .state('Level 1_1Level 2_1Level 3_1', {
                         url: "/Level3_1",
                         templateUrl: "page/extras/StarterPage.html"
                     })
@@ -283,6 +283,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 app.controller('Mcrt', ['$scope', 'Factory', function ($scope, Factory)
 {
 	$scope.righticon = [];
+    $scope.subChild = [];
 	$scope.nval = false;
 	Factory.data().then(
 		function resolved(response) 
@@ -296,7 +297,7 @@ app.controller('Mcrt', ['$scope', 'Factory', function ($scope, Factory)
 	);
 	$scope.slide = function () 
 	{   
-        $scope.subChild = [];
+        $scope.active = [];
 		$scope.nval=!$scope.nval;
 		for(var i = 0; i < $scope.data.length; i++)
 		{
@@ -349,8 +350,10 @@ app.controller('Mcrt', ['$scope', 'Factory', function ($scope, Factory)
     $scope.active1 = [];
 	$scope.subtoggle=function(index,z)
 	{	
-        console.log(z.IconSub.length);
-        for(var i = 0; i < z.IconSub.length; i++)
+         $scope.active2 = [];
+         $scope.active1 = [];
+         $scope.subchild3=[];
+        for(var i = 0; i < z; i++)
         {
                 if (i != index) 
 			{
@@ -365,8 +368,7 @@ app.controller('Mcrt', ['$scope', 'Factory', function ($scope, Factory)
     $scope.active2 = [];
 	$scope.subtoggle2=function(index,z)
 	{	
-         console.log(z.IconSub2.length);
-         for(var i = 0; i < z.IconSub2.length; i++)
+         for(var i = 0; i < z; i++)
          {
                 if (i != index) 
 			{

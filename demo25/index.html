@@ -27,7 +27,7 @@
 					<div class="sidenav" ng-style="{ width: nval == false? '70px' : '250px', height: nval == false? '' : '500px' }" >
 						<ul  ng-class="{slideron:nval==true,slideroff:nval==false}">
 							<li class="sideMenuIcon" ng-repeat="x in data" >
-								<ul class="navhead" ng-click="toggle($index,x.sub);" ng-style=" active[$index] && {'background':'#3f485a'}" > 
+								<ul class="navhead" ng-click="toggle($index,x.sub);" ng-style="{ background: subChild[$index] && true ? '#3f485a' : ''}" > 
 									<li style="position: relative;"  >
 										<a class="{{x.id}} makesmall" id="idd"  ng-style=" active[$index] && {'color':'white'}" ></a>
 										<a ng-show="nval" class="midvalue" ng-style=" active[$index] && {'color':'white'}">{{x.val}}</a>
@@ -36,11 +36,11 @@
 								</ul>
 								<ul ng-class="{submenu:nval==false,submenudrop:nval==true}"  class="sideSubmenu" ng-show="subChild[$index]">
 									<li  ng-repeat="z in x.sub"  >
-										<a class="subname " ng-click="subtoggle($index,z)" ui-sref="{{z.id2}}" ng-style=" active1[$index] && {'color':'white'}">{{z.id2}}</a>
+										<a class="subname " ng-click="subtoggle($index,z.IconSub.length)" ui-sref="{{z.id2}}" ng-style=" active1[$index] && {'color':'white'}">{{z.id2}}</a>
 										<a class="{{subrighticon[$index]}} subright" ng-class="{rotateon:subchild2[$index]==true,rotateoff:subchild2[$index]==false}" ng-style=" active1[$index] && {'color':'white'}"></a>
 										<ul ng-show="subchild2[$index]" >
 											<li class="subchildclass" ng-repeat="icon in z.IconSub"  ui-sref="{{z.id2}}{{icon.id3}}">
-													<a ng-click="subtoggle2($index,icon)"  ng-style=" active2[$index] && {'color':'white'}" >	{{icon.id3}}</a>
+													<a ng-click="subtoggle2($index,icon.IconSub2.length)"  ng-style=" active2[$index] && {'color':'white'}" >	{{icon.id3}}</a>
 													<a class="{{subrighticon[$index]}} subright2" ng-class="{rotateon:subchild3[$index]==true,rotateoff:subchild3[$index]==false}" ng-style=" active2[$index] && {'color':'white'}"></a>
 														<ul ng-show="subchild3[$index]">
 															<li class="subchildclass2" ng-repeat="icon2 in icon.IconSub2" ui-sref="{{z.id2}}{{icon.id3}}{{icon2.id3}}">

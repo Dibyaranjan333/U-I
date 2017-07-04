@@ -242,6 +242,10 @@ ul {
 {
 	color:#fff;
 }
+.sidenav ul li .submenudrop li .subchildclass ul .subchildclass2:hover > a
+{
+	color:#fff;
+}
 .sidenav ul li .submenudrop .subright 
 {
 	float: right;
