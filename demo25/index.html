@@ -11,12 +11,8 @@
 		<link rel="stylesheet" href="page/heder2.css">
 		<link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.min.css">
 </head>
-
 	<body ng-app="main">	
-
 			<div  ng-controller="Mcrt"> 
-
-
 					<div class="nav">
 						<ul>
 								<li class="test nav1" ng-class="{slideron:nval==true,slideroff:nval==false}" ><i class="fa fa-align-left" ng-click="slide()" ></i><h4 ng-if="nval" style="margin-left: 21px;">URBAN</h4></li>
@@ -27,11 +23,6 @@
 								<li class="last"><i class="fa fa-align-left" ></i></li>
 						</ul>
 					</div>
-
-
-
-
-
 <div class="uibody">
 					<div class="sidenav" ng-style="{ width: nval == false? '70px' : '250px', height: nval == false? '' : '500px' }" >
 						<ul  ng-class="{slideron:nval==true,slideroff:nval==false}">
@@ -44,13 +35,16 @@
 									</li>
 								</ul>
 								<ul ng-class="{submenu:nval==false,submenudrop:nval==true}"  class="sideSubmenu" ng-show="subChild[$index]">
-									<li  ng-repeat="z in x.sub"  ><a class="subname " ng-click="subtoggle($index)" ui-sref="{{z.id2}}">{{z.id2}}</a><i class="{{subrighticon[$index]}} subright" ng-class="{rotateon:subchild2[$index]==true,rotateoff:subchild2[$index]==false}"></i>
+									<li  ng-repeat="z in x.sub"  >
+										<a class="subname " ng-click="subtoggle($index,z)" ui-sref="{{z.id2}}" ng-style=" active1[$index] && {'color':'white'}">{{z.id2}}</a>
+										<a class="{{subrighticon[$index]}} subright" ng-class="{rotateon:subchild2[$index]==true,rotateoff:subchild2[$index]==false}" ng-style=" active1[$index] && {'color':'white'}"></a>
 										<ul ng-show="subchild2[$index]" >
 											<li class="subchildclass" ng-repeat="icon in z.IconSub"  ui-sref="{{z.id2}}{{icon.id3}}">
-													<a ng-click="subtoggle2()">	{{icon.id3}}</a><i class="{{subrighticon[$index]}} subright2" ng-class="{rotateon:subchild3==true,rotateoff:subchild3==false}"></i>
-														<ul ng-show="subchild3">
-															<li class="subchildclass2" ng-repeat="icon2 in icon.IconSub2">
-																<a>	{{icon2.id3}}</a>
+													<a ng-click="subtoggle2($index,icon)"  ng-style=" active2[$index] && {'color':'white'}" >	{{icon.id3}}</a>
+													<a class="{{subrighticon[$index]}} subright2" ng-class="{rotateon:subchild3[$index]==true,rotateoff:subchild3[$index]==false}" ng-style=" active2[$index] && {'color':'white'}"></a>
+														<ul ng-show="subchild3[$index]">
+															<li class="subchildclass2" ng-repeat="icon2 in icon.IconSub2" ui-sref="{{z.id2}}{{icon.id3}}{{icon2.id3}}">
+																<a ng-style=" active[$index] && {'color':'white'}">	{{icon2.id3}}</a>
 															</li>
 														</ul>	
 											</li>
@@ -60,8 +54,6 @@
 							</li>
 						</ul>
 					</div>
-
-
 				 <div class="uiview" ui-view=""></div>
 
 </div>

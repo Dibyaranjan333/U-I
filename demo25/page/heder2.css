@@ -143,11 +143,6 @@ ul {
     margin-left: 59px;
     margin-top: 9px;
 }
-.sidenav ul li ul li:hover a{
-transition-delay: 0.1s;
-color:white;
-
-}
 .navhead{
 		height: 40px;
 		padding: 0;
@@ -181,6 +176,9 @@ color:white;
 	    margin-left: 60px;
 		text-decoration: none;
 }
+.sidenav ul li .submenudrop li:hover > a{
+	color: #f8f8f8;
+}
 .slideroff .sideMenuIcon:hover .sideSubmenu{
 	display: block !important;
 }
@@ -189,10 +187,6 @@ color:white;
 }
 .slideroff .sideMenuIcon .sideSubmenu li{
 	padding-top: 5px;
-}
-.sidenav  ul li .sideSubmenu li .subname:hover{
-	transition-delay: 0.1s;
-	color: white;	
 }
 .sidenav ul .sideMenuIcon:hover {
     background-color:#3f485a;
@@ -230,6 +224,9 @@ color:white;
     color:white;
         margin-left: 29px;
 }
+.sidenav ul .navhead:hover li a{
+    color:white;
+}
 .sideMenuIcon{
 	position: relative;
 }
@@ -241,8 +238,9 @@ color:white;
 .sidenav ul li .submenudrop li .subchildclass a{
 	    color: #b2b6be;
 }
-.sidenav ul li .submenudrop li .subchildclass:hover a{
-	    color: #f8f8f8;
+.sidenav ul li .submenudrop li .subchildclass:hover > a
+{
+	color:#fff;
 }
 .sidenav ul li .submenudrop .subright 
 {

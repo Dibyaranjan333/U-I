@@ -74,18 +74,18 @@
  },
  { "id": "fa fa-toggle-on","val":"Widgets","sub":[]},
  { "id": "fa fa-level-down","val":"Menu Levels","sub":[
-	 														 {"id2":"Level 1.1","IconSub":
+	 														 {"id2":"Level 1_1","IconSub":
 																		[
-																			{"id3":"Level 2.1","IconSub2":
+																			{"id3":"Level 2_1","IconSub2":
 																											[
 																												{"id3":"Level 3.1"},
 																												{"id3":"Level 3.2"}
 																											]
 																			},
-																			{"id3":"Level 2.2"}
+																			{"id3":"Level 2_2"}
 																		]
 															},
-															 {"id2":"Level 1.2"}
+															 {"id2":"Level 1_2"}
 													 ]
 },
  { "id": "fa fa-envelope","clas":"env","val":"Transational Emails","sub":[

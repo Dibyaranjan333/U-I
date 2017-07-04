@@ -214,12 +214,25 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: "/StarterPage",
             templateUrl: "page/extras/StarterPage.html"
         })
-        
 
 
+
+
+                 .state('Level 1_1Level 2_2', {
+                        url: "/Level2_2",
+                        templateUrl: "page/extras/StarterPage.html"
+                    })
+
+                    .state('Level 1_1Level 2_1Level 3.1', {
+                        url: "/Level3_1",
+                        templateUrl: "page/extras/StarterPage.html"
+                    })
        
 
-
+            .state('Level 1_2', {
+                url: "/Level1_2",
+                templateUrl: "page/extras/StarterPage.html"
+            })
 
 
 
@@ -304,7 +317,12 @@ app.controller('Mcrt', ['$scope', 'Factory', function ($scope, Factory)
 	$scope.subChild = [];
 	$scope.toggle = function (index,x) 
 	{	
-		$scope.active = [];
+         $scope.active1 = [];
+         $scope.active2 = [];
+         $scope.active = [];
+         $scope.subchild2=[];
+         $scope.subchild3=[];
+
 		$scope.subrighticon = [];
 		$scope.subChild[index] = !$scope.subChild[index];
 		for (var i = 0; i < $scope.data.length; i++) 
@@ -325,20 +343,38 @@ app.controller('Mcrt', ['$scope', 'Factory', function ($scope, Factory)
 			 {
 			 	$scope.subrighticon[i]='fa fa-chevron-right';
 			 }
-			
-			//console.log($scope.data[index].sub[i].IconSub);
 		}	
 	};
 	$scope.subchild2=[];
-	$scope.subtoggle=function(index)
+    $scope.active1 = [];
+	$scope.subtoggle=function(index,z)
 	{	
+        console.log(z.IconSub.length);
+        for(var i = 0; i < z.IconSub.length; i++)
+        {
+                if (i != index) 
+			{
+                $scope.active1[i]=false;	
+            }
+        }
+        $scope.active1[index]=true;
 		$scope.subchild2[index] = !$scope.subchild2[index];
 		
 	}
-	$scope.subchild3=false;
-	$scope.subtoggle2=function()
+	$scope.subchild3=[];
+    $scope.active2 = [];
+	$scope.subtoggle2=function(index,z)
 	{	
-		$scope.subchild3=!$scope.subchild3;
+         console.log(z.IconSub2.length);
+         for(var i = 0; i < z.IconSub2.length; i++)
+         {
+                if (i != index) 
+			{
+                $scope.active2[i]=false;	
+            }
+        }
+         $scope.active2[index]=true;
+		$scope.subchild3[index]=!$scope.subchild3[index];
 	}
 }
 ]);
